@@ -6,5 +6,5 @@ module "projects_iam_bindings" {
     var.GCP_PROJECT
   ]
   bindings = var.iam_bindings
-  
+
 }

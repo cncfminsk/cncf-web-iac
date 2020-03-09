@@ -67,12 +67,12 @@ resource "google_project_service" "oslogin" {
 resource "google_project_service" "servicecontrol" {
   project = var.GCP_PROJECT
   service = "servicecontrol.googleapis.com"
-}         
+}
 
 resource "google_project_service" "endpoints" {
   project = var.GCP_PROJECT
   service = "endpoints.googleapis.com"
-}         
+}
 
 #Enable identity toolkit API
 resource "google_project_service" "identitytoolkit" {
