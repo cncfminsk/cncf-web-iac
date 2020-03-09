@@ -15,14 +15,12 @@ data "google_project" "project" {}
 
 provider "google" {
   version     = "~> 3.5.0"
-  credentials = file("~/.config/gcloud/${var.GCP_PROJECT}.json")
   project     = var.GCP_PROJECT
   region      = var.gcp_region
 }
 
 provider "google-beta" {
   version     = "~> 3.5.0"
-  credentials = file("~/.config/gcloud/${var.GCP_PROJECT}.json")
   project     = var.GCP_PROJECT
   region      = var.gcp_region
 }
