@@ -45,7 +45,6 @@ variable "region_subnets" {
     northamerica-northeast1 = "10.81.0.0/16"
     europe-west4            = "10.82.0.0/16"
     asia-east2              = "10.83.0.0/16"
-    australia-southeast1    = "10.84.0.0/16"
   }
 }
 
