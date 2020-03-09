@@ -1,0 +1,8 @@
+/.idea/
+*.iml
+*.tfe
+/*/.terraform
+.terraform
+*.tfvars
+*.swp
+/*/*.swp
