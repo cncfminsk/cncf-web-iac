@@ -35,7 +35,10 @@ variable "region_zones_eu" {
   default = ["europe-west4-b", "europe-west4-c", "europe-west4-d"]
 }
 
-variable "GCP_ENV" {}
+variable "GCP_ENV" {
+  type = string
+  default = "prod"
+}
 
 variable "region_subnets" {
   type = map
@@ -56,18 +59,17 @@ variable "CF_EMAIL" {}
 variable "CF_API_TOKEN" {}
 
 # network block
-variable "newbits" { type = number }
-variable "cidrnetnum" { type = number }
+variable "newbits" { 
+  type = number 
+  default = 8
+  }
 
-
-# Labels vars
-variable "owner" {}
-variable "environment" {}
-variable "cost-center" {}
-variable "region" {}
-variable "contact" {}
-variable "project" {}
+variable "cidrnetnum" { 
+  type = number 
+    default = 1
+  }
 
 variable "iam_bindings" {
   type = map
+  default = {}
 }

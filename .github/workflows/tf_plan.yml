@@ -37,7 +37,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GCP_PROJECT: ${{secrets.GCP_PROJECT}}
-          TF_STATE_BUCKET: ${{secrets.TF_STATE_BUCKET}}
           GOOGLE_CREDENTIALS: ${{secrets.GOOGLE_CREDENTIALS}}
       - name: 'Terraform Validate'
         uses: hashicorp/terraform-github-actions@master
@@ -55,8 +54,7 @@ jobs:
           tf_actions_subcommand: 'plan'
           tf_actions_working_dir: ${{ env.tf_working_dir }}
           tf_actions_comment: true
+          args: '-var=GCP_PROJECT=${{ secrets.GCP_PROJECT }} -var=CF_EMAIL=${{ secrets.CF_EMAIL }} -var=CF_API_TOKEN=${{ secrets.CF_API_TOKEN }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GCP_PROJECT: ${{secrets.GCP_PROJECT}}
-          TF_STATE_BUCKET: ${{secrets.TF_STATE_BUCKET}}
           GOOGLE_CREDENTIALS: ${{secrets.GOOGLE_CREDENTIALS}}
