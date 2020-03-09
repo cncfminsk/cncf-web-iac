@@ -38,3 +38,4 @@ provider "cloudflare" {
   email   = var.CF_EMAIL
   api_key = var.CF_API_TOKEN
 }
+
