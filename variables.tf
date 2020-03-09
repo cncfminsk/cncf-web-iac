@@ -1,4 +1,4 @@
-variable "gcp_project" {
+variable "GCP_PROJECT" {
   description = "Project ID"
 }
 
@@ -53,8 +53,8 @@ variable "private_ip_google_access" {
   default = true
 }
 
-variable "cf_email" {}
-variable "cf_api_token" {}
+variable "CF_EMAIL" {}
+variable "CF_API_TOKEN" {}
 
 # network block
 variable "newbits" { type = number }
@@ -71,9 +71,4 @@ variable "project" {}
 
 variable "iam_bindings" {
   type = map
-  default = {
-  "roles/storage.admin" = [
-    "user:michael_serchenia@epam.com",
-  ]
-  }
 }

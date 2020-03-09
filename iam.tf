@@ -3,7 +3,7 @@ module "projects_iam_bindings" {
   version = "~> 5.0"
 
   projects = [
-    var.gcp_project
+    var.GCP_PROJECT
   ]
   bindings = var.iam_bindings
   
