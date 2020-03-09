@@ -36,7 +36,7 @@ variable "region_zones_eu" {
 }
 
 variable "GCP_ENV" {
-  type = string
+  type    = string
   default = "prod"
 }
 
@@ -59,17 +59,17 @@ variable "CF_EMAIL" {}
 variable "CF_API_TOKEN" {}
 
 # network block
-variable "newbits" { 
-  type = number 
+variable "newbits" {
+  type    = number
   default = 8
-  }
+}
 
-variable "cidrnetnum" { 
-  type = number 
-    default = 1
-  }
+variable "cidrnetnum" {
+  type    = number
+  default = 1
+}
 
 variable "iam_bindings" {
-  type = map
+  type    = map
   default = {}
 }
