@@ -14,15 +14,15 @@ data "google_client_config" "default" {
 data "google_project" "project" {}
 
 provider "google" {
-  version     = "~> 3.5.0"
-  project     = var.GCP_PROJECT
-  region      = var.gcp_region
+  version = "~> 3.5.0"
+  project = var.GCP_PROJECT
+  region  = var.gcp_region
 }
 
 provider "google-beta" {
-  version     = "~> 3.5.0"
-  project     = var.GCP_PROJECT
-  region      = var.gcp_region
+  version = "~> 3.5.0"
+  project = var.GCP_PROJECT
+  region  = var.gcp_region
 }
 
 terraform {
