@@ -29,6 +29,7 @@ provider "google-beta" {
 
 terraform {
   backend "gcs" {
+    prefix = "project"
   }
 }
 
