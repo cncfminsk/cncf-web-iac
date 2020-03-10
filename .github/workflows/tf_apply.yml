@@ -3,9 +3,9 @@ name: 'Terraform GitHub Actions'
 # events but only for the master branch
 on:
   push:
-    branches: [ project-wip ]
+    branches: [ project ]
   pull_request:
-    branches: [ project-wip ]
+    branches: [ project ]
 env:
   tf_version: 'latest'
   tf_working_dir: '.'
@@ -17,15 +17,6 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-      - name: 'Terraform Format'
-        uses: hashicorp/terraform-github-actions@master
-        with:
-          tf_actions_version: ${{ env.tf_version }}
-          tf_actions_subcommand: 'fmt'
-          tf_actions_working_dir: ${{ env.tf_working_dir }}
-          tf_actions_comment: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Terraform Init'
         uses: hashicorp/terraform-github-actions@master
         with:
@@ -47,14 +38,14 @@ jobs:
           tf_actions_comment: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: 'Terraform Plan'
+      - name: 'Terraform apply'
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: ${{ env.tf_version }}
-          tf_actions_subcommand: 'plan'
+          tf_actions_subcommand: 'apply'
           tf_actions_working_dir: ${{ env.tf_working_dir }}
           tf_actions_comment: true
-          args: '-var=GCP_PROJECT=${{ secrets.GCP_PROJECT }} -var=CF_EMAIL=${{ secrets.CF_EMAIL }} -var=CF_API_TOKEN=${{ secrets.CF_API_TOKEN }}'
+          args: '-auto-approve -var=GCP_PROJECT=${{ secrets.GCP_PROJECT }} -var=CF_EMAIL=${{ secrets.CF_EMAIL }} -var=CF_API_TOKEN=${{ secrets.CF_API_TOKEN }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_CREDENTIALS: ${{secrets.GOOGLE_CREDENTIALS}}
