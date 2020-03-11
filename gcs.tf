@@ -1,5 +1,5 @@
 resource "cloudflare_record" "www-cncfminsk-io" {
-  zone_id = data.cloudflare_zones.cncfminsk-io.zone_id
+  zone_id = data.cloudflare_zones.cncfminsk-io.id
   name    = "www"
   value   = "c.storage.googleapis.com"
   type    = "CNAME"
@@ -20,7 +20,7 @@ resource "google_storage_bucket" "www-cncfminsk-io" {
 }
 
 resource "cloudflare_record" "dev-cncfminsk-io" {
-  zone_id = data.cloudflare_zones.cncfminsk-io.zone_id
+  zone_id = data.cloudflare_zones.cncfminsk-io.id
   name    = "dev"
   value   = "c.storage.googleapis.com"
   type    = "CNAME"
