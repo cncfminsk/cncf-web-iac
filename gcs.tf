@@ -1,4 +1,4 @@
-resource "cloudflare_record" "foobar" {
+resource "cloudflare_record" "www-cncfminsk-io" {
   zone_id = data.cloudflare_zones.cncfminsk-io.zone_id
   name    = "www"
   value   = "c.storage.googleapis.com"
@@ -19,7 +19,7 @@ resource "google_storage_bucket" "www-cncfminsk-io" {
   }
 }
 
-resource "cloudflare_record" "foobar" {
+resource "cloudflare_record" "dev-cncfminsk-io" {
   zone_id = data.cloudflare_zones.cncfminsk-io.zone_id
   name    = "dev"
   value   = "c.storage.googleapis.com"
