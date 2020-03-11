@@ -1,6 +1,6 @@
 resource "cloudflare_record" "www-cncfminsk-io" {
   zone_id = "${lookup(data.cloudflare_zones.cncfminsk-io.zones[0], "id")}"
-  name    = "www.cncfminsk.io"
+  name    = "www"
   value   = "c.storage.googleapis.com"
   type    = "CNAME"
   proxied = true
@@ -21,7 +21,7 @@ resource "google_storage_bucket" "www-cncfminsk-io" {
 
 resource "cloudflare_record" "dev-cncfminsk-io" {
   zone_id = "${lookup(data.cloudflare_zones.cncfminsk-io.zones[0], "id")}"
-  name    = "dev.cncfminsk.io"
+  name    = "dev"
   value   = "c.storage.googleapis.com"
   type    = "CNAME"
   proxied = true
