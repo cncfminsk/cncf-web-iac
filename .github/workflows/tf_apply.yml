@@ -3,9 +3,9 @@ name: 'Terraform GitHub Actions'
 # events but only for the master branch
 on:
   push:
-    branches: [ project ]
+    branches: [ resources ]
   pull_request:
-    branches: [ project ]
+    branches: [ resources ]
 env:
   tf_version: 'latest'
   tf_working_dir: '.'
