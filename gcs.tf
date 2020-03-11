@@ -1,5 +1,13 @@
 resource "cloudflare_record" "www-cncfminsk-io" {
   zone_id = "${lookup(data.cloudflare_zones.cncfminsk-io.zones[0], "id")}"
+  name    = "cncfminsk.io"
+  value   = "192.0.2.1"
+  type    = "A"
+  proxied = true
+}
+
+resource "cloudflare_record" "www-cncfminsk-io" {
+  zone_id = "${lookup(data.cloudflare_zones.cncfminsk-io.zones[0], "id")}"
   name    = "www"
   value   = "c.storage.googleapis.com"
   type    = "CNAME"
