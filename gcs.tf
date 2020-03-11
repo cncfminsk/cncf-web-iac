@@ -1,4 +1,4 @@
-resource "cloudflare_record" "www-cncfminsk-io" {
+resource "cloudflare_record" "cncfminsk-io" {
   zone_id = "${lookup(data.cloudflare_zones.cncfminsk-io.zones[0], "id")}"
   name    = "cncfminsk.io"
   value   = "192.0.2.1"
