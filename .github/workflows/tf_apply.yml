@@ -4,8 +4,6 @@ name: 'Terraform GitHub Actions'
 on:
   push:
     branches: [ project ]
-  pull_request:
-    branches: [ project ]
 env:
   tf_version: 'latest'
   tf_working_dir: '.'
