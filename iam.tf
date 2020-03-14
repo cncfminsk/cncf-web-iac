@@ -20,12 +20,12 @@ resource "google_service_account_key" "website-uploader" {
 
 resource "google_storage_bucket_iam_member" "dev-cncfminsk-io" {
   bucket = "dev.cncfminsk.io"
-  role = "roles/storage.admin"
+  role   = "roles/storage.admin"
   member = "serviceAccount:${google_service_account.website-uploader.email}"
 }
 
 resource "google_storage_bucket_iam_member" "www-cncfminsk-io" {
   bucket = "www.cncfminsk.io"
-  role = "roles/storage.admin"
+  role   = "roles/storage.admin"
   member = "serviceAccount:${google_service_account.website-uploader.email}"
 }
