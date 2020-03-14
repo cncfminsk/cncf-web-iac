@@ -20,12 +20,24 @@ resource "google_service_account_key" "website-uploader" {
 
 resource "google_storage_bucket_iam_member" "dev-cncfminsk-io" {
   bucket = "dev.cncfminsk.io"
-  role   = "roles/storage.admin"
+  role   = "roles/storage.objectAdmin"
   member = "serviceAccount:${google_service_account.website-uploader.email}"
+}
+
+resource "google_storage_bucket_iam_member" "dev-cncfminsk-io-pub" {
+  bucket = "dev.cncfminsk.io"
+  role   = "roles/storage.objectViewer"
+  member = "allUsers"
 }
 
 resource "google_storage_bucket_iam_member" "www-cncfminsk-io" {
   bucket = "www.cncfminsk.io"
-  role   = "roles/storage.admin"
+  role   = "roles/storage.objectAdmin"
   member = "serviceAccount:${google_service_account.website-uploader.email}"
+}
+
+resource "google_storage_bucket_iam_member" "www-cncfminsk-io-pub" {
+  bucket = "www.cncfminsk.io"
+  role   = "roles/storage.objectViewer"
+  member = "allUsers"
 }
